@@ -1,0 +1,59 @@
+package com.zenaufa.popularmovie;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+/**
+ * Created by AST-III-15-009 on 5/24/2017.
+ */
+
+public class DetailActivity extends AppCompatActivity {
+    TextView title;
+    TextView Release;
+    TextView Description;
+    TextView review;
+    ImageView Poster;
+    int id;
+    RatingBar Rating;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_detail);
+
+        Intent intent = getIntent();
+        Poster = (ImageView) findViewById(R.id.poster);
+        title = (TextView) findViewById(R.id.title);
+        Release = (TextView) findViewById(R.id.releaseDate);
+        Description = (TextView) findViewById(R.id.Description);
+        Description.setMovementMethod(new ScrollingMovementMethod());
+        Rating = (RatingBar) findViewById(R.id.rating);
+        review = (TextView) findViewById(R.id.review);
+        Picasso.with(this)
+                .load("http://image.tmdb.org/t/p/w185/" + intent.getStringExtra("movieImg"))
+                .placeholder(R.mipmap.ic_launcher)
+                .into(Poster);
+        title.setText(intent.getStringExtra("movieTitle"));
+        Release.setText(intent.getStringExtra("movieRelease"));
+        Double voteAverage = intent.getDoubleExtra("movieRating", 12);
+        review.setText(intent.getStringExtra("movieReview"));
+        double rating = Double.valueOf(voteAverage);
+        id = intent.getIntExtra("movieId", 0);
+        Description.setText(intent.getStringExtra("movieDesc"));
+        Rating.setRating((float) rating);
+
+        //actionbar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getString(R.string.title_detail));
+        startService(intent);
+    }
+}

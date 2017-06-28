@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <string name="popular">popular</string> <!-- for activity status -->
+    <string name="top">top</string> <!-- for activity status -->
+    <string name="popular_movie">Popular Movie</string> <!-- for menu button -->
+    <string name="top_movie">Top Movie</string> <!-- for menu button -->
+
+    <string name="status_ascending">asc</string> <!-- for sorting status-->
+    <string name="status_descending">desc</string> <!-- for sorting status-->
+
+    <string name="menu_ascending">Sort Ascending</string> <!-- for menu button -->
+    <string name="menu_descending">Sort Descending</string> <!-- for menu button -->
+
+    <string name="release_date">Release Date :</string> <!-- for detail activity -->
+    <string name="title_detail">Movie Detail</string>  <!-- for title of detail activity -->
+</resources>

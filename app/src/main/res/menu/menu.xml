@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <!-- Settings, should always be in the overflow -->
+    <item
+        android:id="@+id/Populars"
+        android:checkable="false"
+        android:enabled="true"
+        android:title="Popular Movie"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Tops"
+        android:checkable="false"
+        android:enabled="true"
+        android:title="Top Movie"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Sort"
+        android:checkable="false"
+        android:enabled="true"
+        android:title="Sort Descending"
+        app:showAsAction="never" />
+</menu>
