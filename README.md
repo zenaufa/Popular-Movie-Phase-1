@@ -5,7 +5,7 @@ Insert your API Key to /res/values/api_keys.xml
 
 Screenshot :
 
-![ScreenShot](/screenshots/1.jpg)
-![ScreenShot](/screenshots/2.jpg)
-![ScreenShot](/screenshots/3.jpg)
-![ScreenShot](/screenshots/4.jpg)
+![ScreenShot](/screenshots/1.png)
+![ScreenShot](/screenshots/2.png)
+![ScreenShot](/screenshots/3.png)
+![ScreenShot](/screenshots/4.png)
