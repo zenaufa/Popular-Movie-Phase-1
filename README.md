@@ -18,9 +18,10 @@ You must use your own API key to build the app.
 
 After you get it, you can insert your API Key to /res/values/api_keys.xml
 
-##Screenshot
+## Screenshot
 
 ![ScreenShot](/Screenshots/1.png)
 ![ScreenShot](/Screenshots/2.png)
+
 ![ScreenShot](/Screenshots/3.png)
 ![ScreenShot](/Screenshots/4.png)
