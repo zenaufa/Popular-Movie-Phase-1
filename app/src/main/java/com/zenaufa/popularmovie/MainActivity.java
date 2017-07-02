@@ -9,6 +9,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 import com.zenaufa.popularmovie.R;
 
 
@@ -34,15 +36,16 @@ public class MainActivity extends AppCompatActivity {
     /*Start App*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        status = getString(R.string.popular);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        status = getString(R.string.popular);
+        setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
         rvMovies = (RecyclerView) findViewById(R.id.rv_movies);
         ContactAdapter adapter = new ContactAdapter(this, null);
         rvMovies.setAdapter(adapter);
+        final int columns = getResources().getInteger(R.integer.gallery_columns);
         StaggeredGridLayoutManager gridLayoutManager =
-                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+                new StaggeredGridLayoutManager(columns, StaggeredGridLayoutManager.VERTICAL);
         rvMovies.setLayoutManager(gridLayoutManager);
 
         Intent popular = new Intent(this, NetworkCall.class);
@@ -63,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
             rvMovies = (RecyclerView) findViewById(R.id.rv_movies);
             ContactAdapter adapter = new ContactAdapter(this, null);
             rvMovies.setAdapter(adapter);
+            final int columns = getResources().getInteger(R.integer.gallery_columns);
             StaggeredGridLayoutManager gridLayoutManager =
-                    new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+                    new StaggeredGridLayoutManager(columns, StaggeredGridLayoutManager.VERTICAL);
             rvMovies.setLayoutManager(gridLayoutManager);
 
             Intent Sort = new Intent(this, NetworkCall.class);
@@ -117,8 +121,9 @@ public class MainActivity extends AppCompatActivity {
             rvMovies = (RecyclerView) findViewById(R.id.rv_movies);
             ContactAdapter adapter = new ContactAdapter(this, null);
             rvMovies.setAdapter(adapter);
+            final int columns = getResources().getInteger(R.integer.gallery_columns);
             StaggeredGridLayoutManager gridLayoutManager =
-                    new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+                    new StaggeredGridLayoutManager(columns, StaggeredGridLayoutManager.VERTICAL);
             rvMovies.setLayoutManager(gridLayoutManager);
 
             Intent top = new Intent(this, NetworkCall.class);
@@ -136,8 +141,9 @@ public class MainActivity extends AppCompatActivity {
             rvMovies = (RecyclerView) findViewById(R.id.rv_movies);
             ContactAdapter adapter = new ContactAdapter(this, null);
             rvMovies.setAdapter(adapter);
+            final int columns = getResources().getInteger(R.integer.gallery_columns);
             StaggeredGridLayoutManager gridLayoutManager =
-                    new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+                    new StaggeredGridLayoutManager(columns, StaggeredGridLayoutManager.VERTICAL);
             rvMovies.setLayoutManager(gridLayoutManager);
 
             Intent popular = new Intent(this, NetworkCall.class);
@@ -178,8 +184,9 @@ public class MainActivity extends AppCompatActivity {
     public void doThis(Movies movies) {
         ContactAdapter adapter = new ContactAdapter(this, movies.getMovies());
         rvMovies.setAdapter(adapter);
+        final int columns = getResources().getInteger(R.integer.gallery_columns);
         StaggeredGridLayoutManager gridLayoutManager =
-                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+                new StaggeredGridLayoutManager(columns, StaggeredGridLayoutManager.VERTICAL);
         rvMovies.setLayoutManager(gridLayoutManager);
     }
 }
