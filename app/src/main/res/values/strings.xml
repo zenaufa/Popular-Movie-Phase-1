@@ -3,8 +3,8 @@
 
     <string name="popular">popular</string> <!-- for activity status -->
     <string name="top">top</string> <!-- for activity status -->
-    <string name="popular_movie">Popular Movie</string> <!-- for menu button -->
-    <string name="top_movie">Top Movie</string> <!-- for menu button -->
+    <string name="popular_movie">Popular Movies</string> <!-- for menu button -->
+    <string name="top_movie">Top Movies</string> <!-- for menu button -->
 
     <string name="status_ascending">asc</string> <!-- for sorting status-->
     <string name="status_descending">desc</string> <!-- for sorting status-->
