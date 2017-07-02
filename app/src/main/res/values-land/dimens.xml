@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="gallery_columns">4</integer>
+    <dimen name="height_row_poster">240dp</dimen>
+    <dimen name="width_row_poster">175dp</dimen>
+</resources>
