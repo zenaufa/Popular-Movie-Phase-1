@@ -24,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
     ImageView Poster;
     int id;
     RatingBar Rating;
+    TextView Rating_text;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class DetailActivity extends AppCompatActivity {
         Release = (TextView) findViewById(R.id.releaseDate);
         Description = (TextView) findViewById(R.id.Description);
         Description.setMovementMethod(new ScrollingMovementMethod());
-        Rating = (RatingBar) findViewById(R.id.rating);
+        Rating_text = (TextView) findViewById(R.id.rating_text);
         review = (TextView) findViewById(R.id.review);
         Picasso.with(this)
                 .load("http://image.tmdb.org/t/p/w185/" + intent.getStringExtra("movieImg"))
@@ -44,16 +45,20 @@ public class DetailActivity extends AppCompatActivity {
                 .into(Poster);
         title.setText(intent.getStringExtra("movieTitle"));
         Release.setText(intent.getStringExtra("movieRelease"));
-        Double voteAverage = intent.getDoubleExtra("movieRating", 12);
         review.setText(intent.getStringExtra("movieReview"));
-        double rating = Double.valueOf(voteAverage);
+        Double voteAverage = intent.getDoubleExtra("movieRating", 12);
         id = intent.getIntExtra("movieId", 0);
+
+        //rating
+        String rating = String.valueOf(voteAverage);
+        Rating_text.setText(rating);
+
+        //description
         Description.setText(intent.getStringExtra("movieDesc"));
-        Rating.setRating((float) rating);
 
         //actionbar
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(getString(R.string.title_detail));
+        actionBar.setTitle("Movie Details");
         startService(intent);
     }
 }

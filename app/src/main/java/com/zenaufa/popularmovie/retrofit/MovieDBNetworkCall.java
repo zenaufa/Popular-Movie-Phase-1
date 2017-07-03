@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MovieDBNetworkCall {
 
     // Trailing slash is needed
-    public static final String BASE_URL = "https://api.themoviedb.org/3/discover/movie/";
+    public static final String BASE_URL = "https://api.themoviedb.org/3/movie/";
 
     /**
      * Method that will produce the instance for network call using retrofit framework

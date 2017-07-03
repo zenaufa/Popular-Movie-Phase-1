@@ -29,8 +29,6 @@ public class NetworkCall extends IntentService {
 
     public static final String ACTION_CALL_API_POPULAR_MOVIE = "ACTION_CALL_API_POPULAR_MOVIE";
     public static final String ACTION_CALL_API_TOP_MOVIE = "ACTION_CALL_API_TOP_MOVIE";
-    public static final String ACTION_CALL_API_POPULAR_MOVIE_ASC = "ACTION_CALL_API_POPULAR_MOVIE_ASC";
-    public static final String ACTION_CALL_API_TOP_MOVIE_ASC = "ACTION_CALL_API_TOP_MOVIE_ASC";
     public static final String ACTION_CALL_API_REVIEW = "ACTION_CALL_API_REVIEW";
     public NetworkCall() {
         super("NetworkCall");
@@ -45,12 +43,6 @@ public class NetworkCall extends IntentService {
             }
             if (action.equals(ACTION_CALL_API_TOP_MOVIE)){
                 handleActionGetTopMovies();
-            }
-            if (action.equals(ACTION_CALL_API_POPULAR_MOVIE_ASC)){
-                handleActionGetPopularMoviesAsc();
-            }
-            if (action.equals(ACTION_CALL_API_TOP_MOVIE_ASC)){
-                handleActionGetTopMoviesAsc();
             }
         }
     }
@@ -70,30 +62,6 @@ public class NetworkCall extends IntentService {
     private void handleActionGetTopMovies() {
         IMovieDBNetworkCall callMovieAPI = MovieDBNetworkCall.getCalledMoviesAPI();
         Call<Movies> callPopularMovies = callMovieAPI.getTopRatedMovies();
-        try {
-            Movies movies = callPopularMovies.execute().body();
-            Log.d(TAG, "size : "+ movies.getMovies().size());
-            EventBus.getDefault().post(movies);
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    private void handleActionGetPopularMoviesAsc() {
-        IMovieDBNetworkCall callMovieAPI = MovieDBNetworkCall.getCalledMoviesAPI();
-        Call<Movies> callMovieAPIPopularMoviesAsc = callMovieAPI.getPopularMoviesAsc();
-        try {
-            Movies movies = callMovieAPIPopularMoviesAsc.execute().body();
-            Log.d(TAG, "size : "+ movies.getMovies().size());
-            EventBus.getDefault().post(movies);
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    private void handleActionGetTopMoviesAsc() {
-        IMovieDBNetworkCall callMovieAPI = MovieDBNetworkCall.getCalledMoviesAPI();
-        Call<Movies> callPopularMovies = callMovieAPI.getTopRatedMoviesAsc();
         try {
             Movies movies = callPopularMovies.execute().body();
             Log.d(TAG, "size : "+ movies.getMovies().size());

@@ -12,17 +12,11 @@ import retrofit2.http.GET;
 
 public interface IMovieDBNetworkCall {
 
-    final String TMDB_API_KEY = BuildConfig.THE_MOVIE_DB_API_TOKEN;
+    final String TMDB_API_KEY = "d778c6ec4dbeb10a05da504ad8f5f8ab";
 
-    @GET("?api_key="+TMDB_API_KEY+"&sort_by=popularity.desc")
+    @GET("popular?api_key="+TMDB_API_KEY)
     Call<Movies> getPopularMovies();
 
-    @GET("?api_key="+TMDB_API_KEY+"&sort_by=popularity.asc")
-    Call<Movies> getPopularMoviesAsc();
-
-    @GET("?api_key="+TMDB_API_KEY+"&without_genres=99,10755&vote_count.gte=75&sort_by=vote_average.desc")
+    @GET("top_rated?api_key="+TMDB_API_KEY)
     Call<Movies> getTopRatedMovies();
-
-    @GET("?api_key="+TMDB_API_KEY+"&without_genres=99,10755&vote_count.gte=75&sort_by=vote_average.asc")
-    Call<Movies> getTopRatedMoviesAsc();
 }

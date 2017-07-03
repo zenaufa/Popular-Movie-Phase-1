@@ -7,18 +7,12 @@
         android:id="@+id/Populars"
         android:checkable="false"
         android:enabled="true"
-        android:title="Popular Movie"
+        android:title="@string/popular_movie"
         app:showAsAction="never" />
     <item
         android:id="@+id/Tops"
         android:checkable="false"
         android:enabled="true"
-        android:title="Top Movie"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/Sort"
-        android:checkable="false"
-        android:enabled="true"
-        android:title="Sort Descending"
+        android:title="@string/top_movie"
         app:showAsAction="never" />
 </menu>

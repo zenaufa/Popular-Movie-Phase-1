@@ -16,7 +16,7 @@ public final class MovieContract {
     /**
      * Content authority as same as on the Manifest file
      */
-    public static final String CONTENT_AUTHORITY = "id.ipaddr.popularmovie.AUTHORITY";
+    public static final String CONTENT_AUTHORITY = "com.zenaufa.popularmovie.AUTHORITY";
 
     /**
      * Base uri which is content:// and content authority
