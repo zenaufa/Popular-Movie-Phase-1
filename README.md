@@ -16,7 +16,7 @@ This app uses The Movie Database API to retrieve movies.
 
 You must use your own API key to build the app.
 
-After you get it, you can insert your API Key to /res/values/api_keys.xml
+After you get it, you can insert your API Key to gradle.properties
 
 ## Screenshot
 
