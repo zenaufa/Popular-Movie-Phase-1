@@ -7,6 +7,7 @@ import com.zenaufa.popularmovie.model.Movies;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
+
 /**
  * Created by ulfiaizzati on 10/13/16.
  */
@@ -14,7 +15,6 @@ import retrofit2.http.GET;
 public interface IMovieDBNetworkCall {
 
     final String TMDB_API_KEY = BuildConfig.THE_MOVIE_DB_API_TOKEN;
-
     @GET("popular?api_key="+TMDB_API_KEY)
     Call<Movies> getPopularMovies();
 
