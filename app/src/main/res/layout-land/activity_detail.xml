@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -209,6 +210,14 @@
             app:layout_constraintTop_toBottomOf="@+id/releaseDate"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="7dp" />
+
+        <Button
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="177dp"
+            tools:layout_editor_absoluteY="176dp" />
 
 
     </android.support.constraint.ConstraintLayout>
