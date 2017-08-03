@@ -11,4 +11,14 @@
 
     <string name="release_date">Release Date :</string> <!-- for detail activity -->
     <string name="title_detail">Movie Detail</string>  <!-- for title of detail activity -->
+
+    <string name="add_favorite">Add to&#160;</string>
+    <string name="remove_favorite">Remove from&#160;</string>
+    <string name="added_to_favorites">Added to Favorites</string>
+    <string name="removed_from_favorites">Removed from Favorites</string>
+
+    <string name="content_provider_unknown_uri">Unknown URI:&#160;</string>
+    <string name="content_provider_not_implemented">Not implemented method</string>
+
+
 </resources>
