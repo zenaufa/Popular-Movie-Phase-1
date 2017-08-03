@@ -61,6 +61,12 @@ public final class MovieContract {
         public static Uri buildMovieWithTrailerAndReview(long id, int paramId){
             return buildProdictUri(id).buildUpon().appendPath(String.valueOf(paramId)).build();
         }
+
+        public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_MOVIE).build();
+
+        public static Uri buildMovieUriWithMovieId(int id) {
+            return CONTENT_URI.buildUpon().appendPath(Integer.toString(id)).build();
+        }
     }
 
     /* Inner class that defines the table trailer contents */
